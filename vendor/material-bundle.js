@@ -874,63 +874,281 @@
     `}renderPrefix(){return this.renderAffix(this.prefixText,!1)}renderSuffix(){return this.renderAffix(this.suffixText,!0)}renderAffix(e,t){return e?d`<span class="${E({suffix:t,prefix:!t})}">${e}</span>`:c}getErrorText(){return this.error?this.errorText:this.nativeErrorText}handleFocusChange(){this.focused=this.inputOrTextarea?.matches(":focus")??!1}handleInput(e){this.dirty=!0,this.value=e.target.value}redispatchEvent(e){Q(this,e)}getInputOrTextarea(){return this.inputOrTextarea||(this.connectedCallback(),this.scheduleUpdate()),this.isUpdatePending&&this.scheduleUpdate(),this.inputOrTextarea}getInput(){return this.type==="textarea"?null:this.getInputOrTextarea()}handleIconChange(){this.hasLeadingIcon=this.leadingIcons.length>0,this.hasTrailingIcon=this.trailingIcons.length>0}[J](){return this.value}formResetCallback(){this.reset()}formStateRestoreCallback(e){this.value=e}focus(){this.getInputOrTextarea().focus()}[se](){return new qr(()=>({state:this,renderedControl:this.inputOrTextarea}))}[le](){return this.inputOrTextarea}[bt](e){e?.preventDefault();let t=this.getErrorText();this.nativeError=!!e,this.nativeErrorText=this.validationMessage,t===this.getErrorText()&&this.field?.reannounceError()}};k.shadowRootOptions={...y.shadowRootOptions,delegatesFocus:!0};i([n({type:Boolean,reflect:!0})],k.prototype,"error",void 0);i([n({attribute:"error-text"})],k.prototype,"errorText",void 0);i([n()],k.prototype,"label",void 0);i([n({type:Boolean,attribute:"no-asterisk"})],k.prototype,"noAsterisk",void 0);i([n({type:Boolean,reflect:!0})],k.prototype,"required",void 0);i([n()],k.prototype,"value",void 0);i([n({attribute:"prefix-text"})],k.prototype,"prefixText",void 0);i([n({attribute:"suffix-text"})],k.prototype,"suffixText",void 0);i([n({type:Boolean,attribute:"has-leading-icon"})],k.prototype,"hasLeadingIcon",void 0);i([n({type:Boolean,attribute:"has-trailing-icon"})],k.prototype,"hasTrailingIcon",void 0);i([n({attribute:"supporting-text"})],k.prototype,"supportingText",void 0);i([n({attribute:"text-direction"})],k.prototype,"textDirection",void 0);i([n({type:Number})],k.prototype,"rows",void 0);i([n({type:Number})],k.prototype,"cols",void 0);i([n({reflect:!0})],k.prototype,"inputMode",void 0);i([n()],k.prototype,"max",void 0);i([n({type:Number})],k.prototype,"maxLength",void 0);i([n()],k.prototype,"min",void 0);i([n({type:Number})],k.prototype,"minLength",void 0);i([n({type:Boolean,attribute:"no-spinner"})],k.prototype,"noSpinner",void 0);i([n()],k.prototype,"pattern",void 0);i([n({reflect:!0,converter:Wa})],k.prototype,"placeholder",void 0);i([n({type:Boolean,reflect:!0})],k.prototype,"readOnly",void 0);i([n({type:Boolean,reflect:!0})],k.prototype,"multiple",void 0);i([n()],k.prototype,"step",void 0);i([n({reflect:!0})],k.prototype,"type",void 0);i([n({reflect:!0})],k.prototype,"autocomplete",void 0);i([C()],k.prototype,"dirty",void 0);i([C()],k.prototype,"focused",void 0);i([C()],k.prototype,"nativeError",void 0);i([C()],k.prototype,"nativeErrorText",void 0);i([x(".input")],k.prototype,"inputOrTextarea",void 0);i([x(".field")],k.prototype,"field",void 0);i([I({slot:"leading-icon"})],k.prototype,"leadingIcons",void 0);i([I({slot:"trailing-icon"})],k.prototype,"trailingIcons",void 0);var Vr=class extends k{constructor(){super(...arguments),this.fieldTag=M`md-filled-field`}};var Bt=m`:host{display:inline-flex;outline:none;resize:both;text-align:start;-webkit-tap-highlight-color:rgba(0,0,0,0)}.text-field,.field{width:100%}.text-field{display:inline-flex}.field{cursor:text}.disabled .field{cursor:default}.text-field,.textarea .field{resize:inherit}slot[name=container]{border-radius:inherit}.icon{color:currentColor;display:flex;align-items:center;justify-content:center;fill:currentColor;position:relative}.icon ::slotted(*){display:flex;position:absolute}[has-start] .icon.leading{font-size:var(--_leading-icon-size);height:var(--_leading-icon-size);width:var(--_leading-icon-size)}[has-end] .icon.trailing{font-size:var(--_trailing-icon-size);height:var(--_trailing-icon-size);width:var(--_trailing-icon-size)}.input-wrapper{display:flex}.input-wrapper>*{all:inherit;padding:0}.input{caret-color:var(--_caret-color);overflow-x:hidden;text-align:inherit}.input::placeholder{color:currentColor;opacity:1}.input::-webkit-calendar-picker-indicator{display:none}.input::-webkit-search-decoration,.input::-webkit-search-cancel-button{display:none}@media(forced-colors: active){.input{background:none}}.no-spinner .input::-webkit-inner-spin-button,.no-spinner .input::-webkit-outer-spin-button{display:none}.no-spinner .input[type=number]{-moz-appearance:textfield}:focus-within .input{caret-color:var(--_focus-caret-color)}.error:focus-within .input{caret-color:var(--_error-focus-caret-color)}.text-field:not(.disabled) .prefix{color:var(--_input-text-prefix-color)}.text-field:not(.disabled) .suffix{color:var(--_input-text-suffix-color)}.text-field:not(.disabled) .input::placeholder{color:var(--_input-text-placeholder-color)}.prefix,.suffix{text-wrap:nowrap;width:min-content}.prefix{padding-inline-end:var(--_input-text-prefix-trailing-space)}.suffix{padding-inline-start:var(--_input-text-suffix-leading-space)}
 `,x1=Bt.styleSheet;var ea=class extends Vr{constructor(){super(...arguments),this.fieldTag=M`md-filled-field`}};ea.styles=[Bt,Ji];ea=i([u("md-filled-text-field")],ea);var ta=m`:host{--_caret-color: var(--md-outlined-text-field-caret-color, var(--md-sys-color-primary, #6750a4));--_disabled-input-text-color: var(--md-outlined-text-field-disabled-input-text-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-input-text-opacity: var(--md-outlined-text-field-disabled-input-text-opacity, 0.38);--_disabled-label-text-color: var(--md-outlined-text-field-disabled-label-text-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-label-text-opacity: var(--md-outlined-text-field-disabled-label-text-opacity, 0.38);--_disabled-leading-icon-color: var(--md-outlined-text-field-disabled-leading-icon-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-leading-icon-opacity: var(--md-outlined-text-field-disabled-leading-icon-opacity, 0.38);--_disabled-outline-color: var(--md-outlined-text-field-disabled-outline-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-outline-opacity: var(--md-outlined-text-field-disabled-outline-opacity, 0.12);--_disabled-outline-width: var(--md-outlined-text-field-disabled-outline-width, 1px);--_disabled-supporting-text-color: var(--md-outlined-text-field-disabled-supporting-text-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-supporting-text-opacity: var(--md-outlined-text-field-disabled-supporting-text-opacity, 0.38);--_disabled-trailing-icon-color: var(--md-outlined-text-field-disabled-trailing-icon-color, var(--md-sys-color-on-surface, #1d1b20));--_disabled-trailing-icon-opacity: var(--md-outlined-text-field-disabled-trailing-icon-opacity, 0.38);--_error-focus-caret-color: var(--md-outlined-text-field-error-focus-caret-color, var(--md-sys-color-error, #b3261e));--_error-focus-input-text-color: var(--md-outlined-text-field-error-focus-input-text-color, var(--md-sys-color-on-surface, #1d1b20));--_error-focus-label-text-color: var(--md-outlined-text-field-error-focus-label-text-color, var(--md-sys-color-error, #b3261e));--_error-focus-leading-icon-color: var(--md-outlined-text-field-error-focus-leading-icon-color, var(--md-sys-color-on-surface-variant, #49454f));--_error-focus-outline-color: var(--md-outlined-text-field-error-focus-outline-color, var(--md-sys-color-error, #b3261e));--_error-focus-supporting-text-color: var(--md-outlined-text-field-error-focus-supporting-text-color, var(--md-sys-color-error, #b3261e));--_error-focus-trailing-icon-color: var(--md-outlined-text-field-error-focus-trailing-icon-color, var(--md-sys-color-error, #b3261e));--_error-hover-input-text-color: var(--md-outlined-text-field-error-hover-input-text-color, var(--md-sys-color-on-surface, #1d1b20));--_error-hover-label-text-color: var(--md-outlined-text-field-error-hover-label-text-color, var(--md-sys-color-on-error-container, #410e0b));--_error-hover-leading-icon-color: var(--md-outlined-text-field-error-hover-leading-icon-color, var(--md-sys-color-on-surface-variant, #49454f));--_error-hover-outline-color: var(--md-outlined-text-field-error-hover-outline-color, var(--md-sys-color-on-error-container, #410e0b));--_error-hover-supporting-text-color: var(--md-outlined-text-field-error-hover-supporting-text-color, var(--md-sys-color-error, #b3261e));--_error-hover-trailing-icon-color: var(--md-outlined-text-field-error-hover-trailing-icon-color, var(--md-sys-color-on-error-container, #410e0b));--_error-input-text-color: var(--md-outlined-text-field-error-input-text-color, var(--md-sys-color-on-surface, #1d1b20));--_error-label-text-color: var(--md-outlined-text-field-error-label-text-color, var(--md-sys-color-error, #b3261e));--_error-leading-icon-color: var(--md-outlined-text-field-error-leading-icon-color, var(--md-sys-color-on-surface-variant, #49454f));--_error-outline-color: var(--md-outlined-text-field-error-outline-color, var(--md-sys-color-error, #b3261e));--_error-supporting-text-color: var(--md-outlined-text-field-error-supporting-text-color, var(--md-sys-color-error, #b3261e));--_error-trailing-icon-color: var(--md-outlined-text-field-error-trailing-icon-color, var(--md-sys-color-error, #b3261e));--_focus-input-text-color: var(--md-outlined-text-field-focus-input-text-color, var(--md-sys-color-on-surface, #1d1b20));--_focus-label-text-color: var(--md-outlined-text-field-focus-label-text-color, var(--md-sys-color-primary, #6750a4));--_focus-leading-icon-color: var(--md-outlined-text-field-focus-leading-icon-color, var(--md-sys-color-on-surface-variant, #49454f));--_focus-outline-color: var(--md-outlined-text-field-focus-outline-color, var(--md-sys-color-primary, #6750a4));--_focus-outline-width: var(--md-outlined-text-field-focus-outline-width, 3px);--_focus-supporting-text-color: var(--md-outlined-text-field-focus-supporting-text-color, var(--md-sys-color-on-surface-variant, #49454f));--_focus-trailing-icon-color: var(--md-outlined-text-field-focus-trailing-icon-color, var(--md-sys-color-on-surface-variant, #49454f));--_hover-input-text-color: var(--md-outlined-text-field-hover-input-text-color, var(--md-sys-color-on-surface, #1d1b20));--_hover-label-text-color: var(--md-outlined-text-field-hover-label-text-color, var(--md-sys-color-on-surface, #1d1b20));--_hover-leading-icon-color: var(--md-outlined-text-field-hover-leading-icon-color, var(--md-sys-color-on-surface-variant, #49454f));--_hover-outline-color: var(--md-outlined-text-field-hover-outline-color, var(--md-sys-color-on-surface, #1d1b20));--_hover-outline-width: var(--md-outlined-text-field-hover-outline-width, 1px);--_hover-supporting-text-color: var(--md-outlined-text-field-hover-supporting-text-color, var(--md-sys-color-on-surface-variant, #49454f));--_hover-trailing-icon-color: var(--md-outlined-text-field-hover-trailing-icon-color, var(--md-sys-color-on-surface-variant, #49454f));--_input-text-color: var(--md-outlined-text-field-input-text-color, var(--md-sys-color-on-surface, #1d1b20));--_input-text-font: var(--md-outlined-text-field-input-text-font, var(--md-sys-typescale-body-large-font, var(--md-ref-typeface-plain, Roboto)));--_input-text-line-height: var(--md-outlined-text-field-input-text-line-height, var(--md-sys-typescale-body-large-line-height, 1.5rem));--_input-text-placeholder-color: var(--md-outlined-text-field-input-text-placeholder-color, var(--md-sys-color-on-surface-variant, #49454f));--_input-text-prefix-color: var(--md-outlined-text-field-input-text-prefix-color, var(--md-sys-color-on-surface-variant, #49454f));--_input-text-size: var(--md-outlined-text-field-input-text-size, var(--md-sys-typescale-body-large-size, 1rem));--_input-text-suffix-color: var(--md-outlined-text-field-input-text-suffix-color, var(--md-sys-color-on-surface-variant, #49454f));--_input-text-weight: var(--md-outlined-text-field-input-text-weight, var(--md-sys-typescale-body-large-weight, var(--md-ref-typeface-weight-regular, 400)));--_label-text-color: var(--md-outlined-text-field-label-text-color, var(--md-sys-color-on-surface-variant, #49454f));--_label-text-font: var(--md-outlined-text-field-label-text-font, var(--md-sys-typescale-body-large-font, var(--md-ref-typeface-plain, Roboto)));--_label-text-line-height: var(--md-outlined-text-field-label-text-line-height, var(--md-sys-typescale-body-large-line-height, 1.5rem));--_label-text-populated-line-height: var(--md-outlined-text-field-label-text-populated-line-height, var(--md-sys-typescale-body-small-line-height, 1rem));--_label-text-populated-size: var(--md-outlined-text-field-label-text-populated-size, var(--md-sys-typescale-body-small-size, 0.75rem));--_label-text-size: var(--md-outlined-text-field-label-text-size, var(--md-sys-typescale-body-large-size, 1rem));--_label-text-weight: var(--md-outlined-text-field-label-text-weight, var(--md-sys-typescale-body-large-weight, var(--md-ref-typeface-weight-regular, 400)));--_leading-icon-color: var(--md-outlined-text-field-leading-icon-color, var(--md-sys-color-on-surface-variant, #49454f));--_leading-icon-size: var(--md-outlined-text-field-leading-icon-size, 24px);--_outline-color: var(--md-outlined-text-field-outline-color, var(--md-sys-color-outline, #79747e));--_outline-width: var(--md-outlined-text-field-outline-width, 1px);--_supporting-text-color: var(--md-outlined-text-field-supporting-text-color, var(--md-sys-color-on-surface-variant, #49454f));--_supporting-text-font: var(--md-outlined-text-field-supporting-text-font, var(--md-sys-typescale-body-small-font, var(--md-ref-typeface-plain, Roboto)));--_supporting-text-line-height: var(--md-outlined-text-field-supporting-text-line-height, var(--md-sys-typescale-body-small-line-height, 1rem));--_supporting-text-size: var(--md-outlined-text-field-supporting-text-size, var(--md-sys-typescale-body-small-size, 0.75rem));--_supporting-text-weight: var(--md-outlined-text-field-supporting-text-weight, var(--md-sys-typescale-body-small-weight, var(--md-ref-typeface-weight-regular, 400)));--_trailing-icon-color: var(--md-outlined-text-field-trailing-icon-color, var(--md-sys-color-on-surface-variant, #49454f));--_trailing-icon-size: var(--md-outlined-text-field-trailing-icon-size, 24px);--_container-shape-start-start: var(--md-outlined-text-field-container-shape-start-start, var(--md-outlined-text-field-container-shape, var(--md-sys-shape-corner-extra-small, 4px)));--_container-shape-start-end: var(--md-outlined-text-field-container-shape-start-end, var(--md-outlined-text-field-container-shape, var(--md-sys-shape-corner-extra-small, 4px)));--_container-shape-end-end: var(--md-outlined-text-field-container-shape-end-end, var(--md-outlined-text-field-container-shape, var(--md-sys-shape-corner-extra-small, 4px)));--_container-shape-end-start: var(--md-outlined-text-field-container-shape-end-start, var(--md-outlined-text-field-container-shape, var(--md-sys-shape-corner-extra-small, 4px)));--_icon-input-space: var(--md-outlined-text-field-icon-input-space, 16px);--_leading-space: var(--md-outlined-text-field-leading-space, 16px);--_trailing-space: var(--md-outlined-text-field-trailing-space, 16px);--_top-space: var(--md-outlined-text-field-top-space, 16px);--_bottom-space: var(--md-outlined-text-field-bottom-space, 16px);--_input-text-prefix-trailing-space: var(--md-outlined-text-field-input-text-prefix-trailing-space, 2px);--_input-text-suffix-leading-space: var(--md-outlined-text-field-input-text-suffix-leading-space, 2px);--_focus-caret-color: var(--md-outlined-text-field-focus-caret-color, var(--md-sys-color-primary, #6750a4));--_with-leading-icon-leading-space: var(--md-outlined-text-field-with-leading-icon-leading-space, 12px);--_with-trailing-icon-trailing-space: var(--md-outlined-text-field-with-trailing-icon-trailing-space, 12px);--md-outlined-field-bottom-space: var(--_bottom-space);--md-outlined-field-container-shape-end-end: var(--_container-shape-end-end);--md-outlined-field-container-shape-end-start: var(--_container-shape-end-start);--md-outlined-field-container-shape-start-end: var(--_container-shape-start-end);--md-outlined-field-container-shape-start-start: var(--_container-shape-start-start);--md-outlined-field-content-color: var(--_input-text-color);--md-outlined-field-content-font: var(--_input-text-font);--md-outlined-field-content-line-height: var(--_input-text-line-height);--md-outlined-field-content-size: var(--_input-text-size);--md-outlined-field-content-space: var(--_icon-input-space);--md-outlined-field-content-weight: var(--_input-text-weight);--md-outlined-field-disabled-content-color: var(--_disabled-input-text-color);--md-outlined-field-disabled-content-opacity: var(--_disabled-input-text-opacity);--md-outlined-field-disabled-label-text-color: var(--_disabled-label-text-color);--md-outlined-field-disabled-label-text-opacity: var(--_disabled-label-text-opacity);--md-outlined-field-disabled-leading-content-color: var(--_disabled-leading-icon-color);--md-outlined-field-disabled-leading-content-opacity: var(--_disabled-leading-icon-opacity);--md-outlined-field-disabled-outline-color: var(--_disabled-outline-color);--md-outlined-field-disabled-outline-opacity: var(--_disabled-outline-opacity);--md-outlined-field-disabled-outline-width: var(--_disabled-outline-width);--md-outlined-field-disabled-supporting-text-color: var(--_disabled-supporting-text-color);--md-outlined-field-disabled-supporting-text-opacity: var(--_disabled-supporting-text-opacity);--md-outlined-field-disabled-trailing-content-color: var(--_disabled-trailing-icon-color);--md-outlined-field-disabled-trailing-content-opacity: var(--_disabled-trailing-icon-opacity);--md-outlined-field-error-content-color: var(--_error-input-text-color);--md-outlined-field-error-focus-content-color: var(--_error-focus-input-text-color);--md-outlined-field-error-focus-label-text-color: var(--_error-focus-label-text-color);--md-outlined-field-error-focus-leading-content-color: var(--_error-focus-leading-icon-color);--md-outlined-field-error-focus-outline-color: var(--_error-focus-outline-color);--md-outlined-field-error-focus-supporting-text-color: var(--_error-focus-supporting-text-color);--md-outlined-field-error-focus-trailing-content-color: var(--_error-focus-trailing-icon-color);--md-outlined-field-error-hover-content-color: var(--_error-hover-input-text-color);--md-outlined-field-error-hover-label-text-color: var(--_error-hover-label-text-color);--md-outlined-field-error-hover-leading-content-color: var(--_error-hover-leading-icon-color);--md-outlined-field-error-hover-outline-color: var(--_error-hover-outline-color);--md-outlined-field-error-hover-supporting-text-color: var(--_error-hover-supporting-text-color);--md-outlined-field-error-hover-trailing-content-color: var(--_error-hover-trailing-icon-color);--md-outlined-field-error-label-text-color: var(--_error-label-text-color);--md-outlined-field-error-leading-content-color: var(--_error-leading-icon-color);--md-outlined-field-error-outline-color: var(--_error-outline-color);--md-outlined-field-error-supporting-text-color: var(--_error-supporting-text-color);--md-outlined-field-error-trailing-content-color: var(--_error-trailing-icon-color);--md-outlined-field-focus-content-color: var(--_focus-input-text-color);--md-outlined-field-focus-label-text-color: var(--_focus-label-text-color);--md-outlined-field-focus-leading-content-color: var(--_focus-leading-icon-color);--md-outlined-field-focus-outline-color: var(--_focus-outline-color);--md-outlined-field-focus-outline-width: var(--_focus-outline-width);--md-outlined-field-focus-supporting-text-color: var(--_focus-supporting-text-color);--md-outlined-field-focus-trailing-content-color: var(--_focus-trailing-icon-color);--md-outlined-field-hover-content-color: var(--_hover-input-text-color);--md-outlined-field-hover-label-text-color: var(--_hover-label-text-color);--md-outlined-field-hover-leading-content-color: var(--_hover-leading-icon-color);--md-outlined-field-hover-outline-color: var(--_hover-outline-color);--md-outlined-field-hover-outline-width: var(--_hover-outline-width);--md-outlined-field-hover-supporting-text-color: var(--_hover-supporting-text-color);--md-outlined-field-hover-trailing-content-color: var(--_hover-trailing-icon-color);--md-outlined-field-label-text-color: var(--_label-text-color);--md-outlined-field-label-text-font: var(--_label-text-font);--md-outlined-field-label-text-line-height: var(--_label-text-line-height);--md-outlined-field-label-text-populated-line-height: var(--_label-text-populated-line-height);--md-outlined-field-label-text-populated-size: var(--_label-text-populated-size);--md-outlined-field-label-text-size: var(--_label-text-size);--md-outlined-field-label-text-weight: var(--_label-text-weight);--md-outlined-field-leading-content-color: var(--_leading-icon-color);--md-outlined-field-leading-space: var(--_leading-space);--md-outlined-field-outline-color: var(--_outline-color);--md-outlined-field-outline-width: var(--_outline-width);--md-outlined-field-supporting-text-color: var(--_supporting-text-color);--md-outlined-field-supporting-text-font: var(--_supporting-text-font);--md-outlined-field-supporting-text-line-height: var(--_supporting-text-line-height);--md-outlined-field-supporting-text-size: var(--_supporting-text-size);--md-outlined-field-supporting-text-weight: var(--_supporting-text-weight);--md-outlined-field-top-space: var(--_top-space);--md-outlined-field-trailing-content-color: var(--_trailing-icon-color);--md-outlined-field-trailing-space: var(--_trailing-space);--md-outlined-field-with-leading-content-leading-space: var(--_with-leading-icon-leading-space);--md-outlined-field-with-trailing-content-trailing-space: var(--_with-trailing-icon-trailing-space)}
 `,R1=ta.styleSheet;var Ur=class extends k{constructor(){super(...arguments),this.fieldTag=M`md-outlined-field`}};var ra=class extends Ur{constructor(){super(...arguments),this.fieldTag=M`md-outlined-field`}};ra.styles=[Bt,ta];ra=i([u("md-outlined-text-field")],ra);})();
-/**
- * @license
- * Copyright 2017 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
-/**
- * @license
- * Copyright 2019 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
-/**
- * @license
- * Copyright 2021 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
-/**
- * @license
- * Copyright 2022 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
-/**
- * @license
- * Copyright 2022 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-/**
- * @license
- * Copyright 2026 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-/**
- * @license
- * Copyright 2023 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-/**
- * @license
- * Copyright 2021 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-/**
- * @license
- * Copyright 2018 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
-/**
- * @license
- * Copyright 2019 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-/**
- * @license
- * Copyright 2018 Google LLC
- * SPDX-License-Identifier: Apache-2.0
- */
-/**
- * @license
- * Copyright 2020 Google LLC
- * SPDX-License-Identifier: BSD-3-Clause
- */
+/*! Bundled license information:
+
+@lit/reactive-element/decorators/custom-element.js:
+@lit/reactive-element/reactive-element.js:
+@lit/reactive-element/decorators/property.js:
+@lit/reactive-element/decorators/state.js:
+@lit/reactive-element/decorators/event-options.js:
+@lit/reactive-element/decorators/base.js:
+@lit/reactive-element/decorators/query.js:
+@lit/reactive-element/decorators/query-all.js:
+@lit/reactive-element/decorators/query-async.js:
+@lit/reactive-element/decorators/query-assigned-nodes.js:
+lit-html/lit-html.js:
+lit-element/lit-element.js:
+lit-html/directive.js:
+  (**
+   * @license
+   * Copyright 2017 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   *)
+
+@lit/reactive-element/css-tag.js:
+  (**
+   * @license
+   * Copyright 2019 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   *)
+
+@lit/reactive-element/decorators/query-assigned-elements.js:
+lit-html/directives/when.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   *)
+
+lit-html/is-server.js:
+  (**
+   * @license
+   * Copyright 2022 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   *)
+
+@material/web/elevation/internal/elevation.js:
+@material/web/elevation/elevation.js:
+@material/web/ripple/internal/ripple.js:
+@material/web/ripple/ripple.js:
+@material/web/fab/fab.js:
+@material/web/icon/internal/icon.js:
+@material/web/icon/icon.js:
+@material/web/internal/controller/is-rtl.js:
+@material/web/iconbutton/filled-icon-button.js:
+@material/web/iconbutton/filled-tonal-icon-button.js:
+@material/web/iconbutton/outlined-icon-button.js:
+@material/web/list/internal/listitem/list-item.js:
+@material/web/list/list-item.js:
+@material/web/menu/menu.js:
+@material/web/menu/internal/menuitem/menu-item.js:
+@material/web/menu/menu-item.js:
+@material/web/radio/internal/single-selection-controller.js:
+@material/web/radio/radio.js:
+@material/web/internal/controller/string-converter.js:
+  (**
+   * @license
+   * Copyright 2022 Google LLC
+   * SPDX-License-Identifier: Apache-2.0
+   *)
+
+@material/web/elevation/internal/elevation-styles.cssresult.js:
+@material/web/focus/internal/focus-ring-styles.cssresult.js:
+@material/web/ripple/internal/ripple-styles.cssresult.js:
+@material/web/button/internal/elevated-styles.cssresult.js:
+@material/web/button/internal/shared-elevation-styles.cssresult.js:
+@material/web/button/internal/shared-styles.cssresult.js:
+@material/web/button/internal/filled-styles.cssresult.js:
+@material/web/button/internal/filled-tonal-styles.cssresult.js:
+@material/web/button/internal/outlined-styles.cssresult.js:
+@material/web/button/internal/text-styles.cssresult.js:
+@material/web/checkbox/internal/checkbox-styles.cssresult.js:
+@material/web/chips/internal/assist-styles.cssresult.js:
+@material/web/chips/internal/elevated-styles.cssresult.js:
+@material/web/chips/internal/shared-styles.cssresult.js:
+@material/web/chips/internal/chip-set-styles.cssresult.js:
+@material/web/chips/internal/filter-styles.cssresult.js:
+@material/web/chips/internal/selectable-styles.cssresult.js:
+@material/web/chips/internal/trailing-icon-styles.cssresult.js:
+@material/web/chips/internal/input-styles.cssresult.js:
+@material/web/chips/internal/suggestion-styles.cssresult.js:
+@material/web/divider/internal/divider-styles.cssresult.js:
+@material/web/dialog/internal/dialog-styles.cssresult.js:
+@material/web/fab/internal/fab-branded-styles.cssresult.js:
+@material/web/fab/internal/forced-colors-styles.cssresult.js:
+@material/web/fab/internal/shared-styles.cssresult.js:
+@material/web/fab/internal/fab-styles.cssresult.js:
+@material/web/field/internal/filled-styles.cssresult.js:
+@material/web/field/internal/shared-styles.cssresult.js:
+@material/web/field/internal/outlined-styles.cssresult.js:
+@material/web/icon/internal/icon-styles.cssresult.js:
+@material/web/iconbutton/internal/filled-styles.cssresult.js:
+@material/web/iconbutton/internal/shared-styles.cssresult.js:
+@material/web/iconbutton/internal/filled-tonal-styles.cssresult.js:
+@material/web/iconbutton/internal/standard-styles.cssresult.js:
+@material/web/iconbutton/internal/outlined-styles.cssresult.js:
+@material/web/list/internal/list-styles.cssresult.js:
+@material/web/labs/item/internal/item-styles.cssresult.js:
+@material/web/list/internal/listitem/list-item-styles.cssresult.js:
+@material/web/menu/internal/menu-styles.cssresult.js:
+@material/web/menu/internal/menuitem/menu-item-styles.cssresult.js:
+@material/web/menu/internal/submenu/sub-menu-styles.cssresult.js:
+@material/web/progress/internal/circular-progress-styles.cssresult.js:
+@material/web/progress/internal/linear-progress-styles.cssresult.js:
+@material/web/radio/internal/radio-styles.cssresult.js:
+@material/web/select/internal/filled-select-styles.cssresult.js:
+@material/web/select/internal/shared-styles.cssresult.js:
+@material/web/select/internal/outlined-select-styles.cssresult.js:
+@material/web/slider/internal/forced-colors-styles.cssresult.js:
+@material/web/slider/internal/slider-styles.cssresult.js:
+@material/web/switch/internal/switch-styles.cssresult.js:
+@material/web/tabs/internal/primary-tab-styles.cssresult.js:
+@material/web/tabs/internal/tab-styles.cssresult.js:
+@material/web/tabs/internal/secondary-tab-styles.cssresult.js:
+@material/web/tabs/internal/tabs-styles.cssresult.js:
+@material/web/textfield/internal/filled-styles.cssresult.js:
+@material/web/textfield/internal/shared-styles.cssresult.js:
+@material/web/textfield/internal/outlined-styles.cssresult.js:
+  (**
+   * @license
+   * Copyright 2026 Google LLC
+   * SPDX-License-Identifier: Apache-2.0
+   *)
+
+@material/web/internal/controller/attachable-controller.js:
+@material/web/internal/aria/aria.js:
+@material/web/internal/aria/delegate.js:
+@material/web/labs/behaviors/element-internals.js:
+@material/web/labs/behaviors/form-associated.js:
+@material/web/internal/events/dispatch-hooks.js:
+@material/web/labs/behaviors/form-submitter.js:
+@material/web/labs/behaviors/constraint-validation.js:
+@material/web/labs/behaviors/validators/validator.js:
+@material/web/labs/behaviors/validators/checkbox-validator.js:
+@material/web/chips/internal/chip.js:
+@material/web/chips/internal/assist-chip.js:
+@material/web/chips/assist-chip.js:
+@material/web/chips/internal/chip-set.js:
+@material/web/chips/chip-set.js:
+@material/web/chips/internal/multi-action-chip.js:
+@material/web/chips/internal/trailing-icons.js:
+@material/web/chips/internal/filter-chip.js:
+@material/web/chips/filter-chip.js:
+@material/web/chips/internal/input-chip.js:
+@material/web/chips/input-chip.js:
+@material/web/chips/internal/suggestion-chip.js:
+@material/web/chips/suggestion-chip.js:
+@material/web/divider/internal/divider.js:
+@material/web/divider/divider.js:
+@material/web/dialog/internal/animations.js:
+@material/web/dialog/internal/dialog.js:
+@material/web/dialog/dialog.js:
+@material/web/fab/internal/shared.js:
+@material/web/fab/internal/fab.js:
+@material/web/fab/branded-fab.js:
+@material/web/list/internal/list-navigation-helpers.js:
+@material/web/list/internal/list-controller.js:
+@material/web/labs/item/internal/item.js:
+@material/web/labs/item/item.js:
+@material/web/menu/internal/controllers/shared.js:
+@material/web/menu/internal/controllers/surfacePositionController.js:
+@material/web/menu/internal/controllers/typeaheadController.js:
+@material/web/menu/internal/menu.js:
+@material/web/menu/internal/controllers/menuItemController.js:
+@material/web/menu/internal/submenu/sub-menu.js:
+@material/web/menu/sub-menu.js:
+@material/web/progress/internal/progress.js:
+@material/web/progress/internal/circular-progress.js:
+@material/web/progress/circular-progress.js:
+@material/web/progress/internal/linear-progress.js:
+@material/web/progress/linear-progress.js:
+@material/web/labs/behaviors/focusable.js:
+@material/web/labs/behaviors/validators/radio-validator.js:
+@material/web/labs/behaviors/on-report-validity.js:
+@material/web/labs/behaviors/validators/select-validator.js:
+@material/web/select/internal/shared.js:
+@material/web/select/internal/select.js:
+@material/web/select/internal/filled-select.js:
+@material/web/select/filled-select.js:
+@material/web/select/internal/outlined-select.js:
+@material/web/select/outlined-select.js:
+@material/web/select/internal/selectoption/selectOptionController.js:
+@material/web/select/internal/selectoption/select-option.js:
+@material/web/select/select-option.js:
+@material/web/slider/internal/slider.js:
+@material/web/slider/slider.js:
+@material/web/tabs/internal/tab.js:
+@material/web/tabs/internal/primary-tab.js:
+@material/web/tabs/primary-tab.js:
+@material/web/tabs/internal/secondary-tab.js:
+@material/web/tabs/secondary-tab.js:
+@material/web/tabs/internal/tabs.js:
+@material/web/tabs/tabs.js:
+@material/web/labs/behaviors/validators/text-field-validator.js:
+@material/web/all.js:
+  (**
+   * @license
+   * Copyright 2023 Google LLC
+   * SPDX-License-Identifier: Apache-2.0
+   *)
+
+@material/web/focus/internal/focus-ring.js:
+@material/web/focus/md-focus-ring.js:
+@material/web/internal/motion/animation.js:
+@material/web/internal/events/form-label-activation.js:
+@material/web/button/internal/elevated-button.js:
+@material/web/button/elevated-button.js:
+@material/web/button/internal/filled-button.js:
+@material/web/button/filled-button.js:
+@material/web/button/internal/filled-tonal-button.js:
+@material/web/button/filled-tonal-button.js:
+@material/web/button/internal/outlined-button.js:
+@material/web/button/outlined-button.js:
+@material/web/button/internal/text-button.js:
+@material/web/button/text-button.js:
+@material/web/internal/events/redispatch-event.js:
+@material/web/field/internal/field.js:
+@material/web/field/internal/filled-field.js:
+@material/web/field/filled-field.js:
+@material/web/field/internal/outlined-field.js:
+@material/web/field/outlined-field.js:
+@material/web/iconbutton/icon-button.js:
+@material/web/list/internal/list.js:
+@material/web/list/list.js:
+@material/web/switch/internal/switch.js:
+@material/web/switch/switch.js:
+@material/web/textfield/internal/text-field.js:
+@material/web/textfield/internal/filled-text-field.js:
+@material/web/textfield/filled-text-field.js:
+@material/web/textfield/internal/outlined-text-field.js:
+@material/web/textfield/outlined-text-field.js:
+  (**
+   * @license
+   * Copyright 2021 Google LLC
+   * SPDX-License-Identifier: Apache-2.0
+   *)
+
+lit-html/directives/class-map.js:
+lit-html/directives/style-map.js:
+  (**
+   * @license
+   * Copyright 2018 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   *)
+
+@material/web/button/internal/button.js:
+@material/web/checkbox/internal/checkbox.js:
+  (**
+   * @license
+   * Copyright 2019 Google LLC
+   * SPDX-License-Identifier: Apache-2.0
+   *)
+
+@material/web/checkbox/checkbox.js:
+@material/web/iconbutton/internal/icon-button.js:
+@material/web/radio/internal/radio.js:
+  (**
+   * @license
+   * Copyright 2018 Google LLC
+   * SPDX-License-Identifier: Apache-2.0
+   *)
+
+lit-html/static.js:
+lit-html/directive-helpers.js:
+lit-html/directives/live.js:
+  (**
+   * @license
+   * Copyright 2020 Google LLC
+   * SPDX-License-Identifier: BSD-3-Clause
+   *)
+*/
